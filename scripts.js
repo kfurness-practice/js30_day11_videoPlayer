@@ -27,7 +27,7 @@ function toggleButton() {
 
 
 // Hook up event listeners
+video.addEventListener('play', toggleButton);
+video.addEventListener('pause', toggleButton);
 video.addEventListener('click', togglePlay);
-video.addEventListener('click', toggleButton);
 toggle.addEventListener('click', togglePlay);
-toggle.addEventListener('click', toggleButton);
