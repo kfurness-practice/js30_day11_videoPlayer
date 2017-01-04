@@ -41,9 +41,10 @@ function skip() {
 }
 
 function handleRangeUpdate () {
-  console.log(this.name);
-  const volume = this.name === "volume" ? video.volume = this.value : null;
-  const playbackRate = this.name === "playbackRate" ? video.playbackRate = this.value : null;
+  // Kelly's solution
+  // const volume = this.name === "volume" ? video.volume = this.value : null;
+  // const playbackRate = this.name === "playbackRate" ? video.playbackRate = this.value : null;
+  video[this.name] = this.value;
 }
 
 // Hook up event listeners
@@ -56,3 +57,4 @@ toggle.addEventListener('click', togglePlay);
 skipButtons.forEach(c => c.addEventListener('click', skip));
 
 ranges.forEach( c => c.addEventListener('change', handleRangeUpdate));
+ranges.forEach( c => c.addEventListener('mousemove', handleRangeUpdate));
